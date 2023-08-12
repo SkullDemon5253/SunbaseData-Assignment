@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 
-public class LineDrawing : MonoBehaviour
+public class LineDrawing : MonoBehaviour 
 {
+    public UITweening2 uitweening;
     public LineRenderer lineRenderer;
     public LayerMask circleLayer;
     public float intersectionCheckRadius = 0.1f;
@@ -93,7 +95,9 @@ public class LineDrawing : MonoBehaviour
 
         intersectedCircles.Clear();
         lineRenderer.enabled = false;
+
         restartPanel.SetActive(true);
+        uitweening.startTween();
 
         this.enabled = false;
     }
